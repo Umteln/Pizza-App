@@ -5,7 +5,9 @@ export async function stripeCheckout({ lineItems }) {
 
 	const getStripe = () => {
 		if (!stripePromise) {
-			stripePromise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
+			stripePromise = loadStripe(
+				'pk_test_51MQFWyCY6RECS3apKSowerKt1MIPvOTby1URScxXXKjVxTfRIDgKSeuN3uQ8U7HpOGHt8bGxOUsyu5TQXdeWdJCv00O8gajikz'
+			);
 		}
 		return stripePromise;
 	};

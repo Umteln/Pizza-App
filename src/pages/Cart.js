@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext} from 'react';
 import '../styles/CartItem.css';
 import { stripeCheckout } from '../utils/stripeCheckout.js';
 import CartProduct from '../components/CartProduct';
@@ -6,6 +6,7 @@ import { ShoppingCartContext } from '../utils/shoppingCartContext';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
+	
 	const cart = useContext(ShoppingCartContext);
 	const productsCount = cart.items.reduce(
 		(sum, product) => sum + product.quantity,
