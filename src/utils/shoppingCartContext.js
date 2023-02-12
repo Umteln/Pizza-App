@@ -12,7 +12,7 @@ export const ShoppingCartContext = createContext({
 
 export function ShoppingCartProvider({ children }) {
 	const [cartProducts, setCartProducts] = useState([]);
-	const [openLinks, setOpenLinks] = useState(false);
+	
 
 	function getProductQuantity(id) {
 		const quantity = cartProducts.find(
@@ -87,8 +87,6 @@ export function ShoppingCartProvider({ children }) {
 	const contextValue = {
 		items: cartProducts,
 		cartProducts,
-		openLinks,
-		setOpenLinks,
 		setCartProducts,
 		getProductQuantity,
 		addOneToCart,

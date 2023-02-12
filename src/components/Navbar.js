@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import '../styles/Navbar.css';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.png';
@@ -6,7 +6,7 @@ import ReorderIcon from '@mui/icons-material/Reorder';
 import { ShoppingCartContext } from '../utils/shoppingCartContext';
 
 const Navbar = () => {
-	const { openLinks, setOpenLinks } = useContext(ShoppingCartContext);
+	const [openLinks, setOpenLinks] = useState(false);
 	const cart = useContext(ShoppingCartContext);
 
 	const productsCount = cart.items.reduce(

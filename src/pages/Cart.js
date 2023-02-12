@@ -6,25 +6,14 @@ import { ShoppingCartContext } from '../utils/shoppingCartContext';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-	const [firstLoad, setFirstLoad] = useState(true);
-	const { setCartProducts, cartProducts } = useContext(ShoppingCartContext);
 	const cart = useContext(ShoppingCartContext);
 	const productsCount = cart.items.reduce(
 		(sum, product) => sum + product.quantity,
 		0
 	);
 
-	useEffect(() => {
-		if (firstLoad) {
-			const storedCart = localStorage.getItem('cart');
-			const parsedStoredCart = JSON.parse(storedCart);
-			setCartProducts(parsedStoredCart);
-			setFirstLoad(false);
-		}
-	}, [firstLoad, setCartProducts]);
-
 	const handleCheckout = () => {
-		let items = cartProducts.filter((product) => product.quantity !== 0);
+		let items = cart.items.filter((product) => product.quantity !== 0);
 		let lineItems = [];
 		items.forEach((item) => {
 			lineItems.push({
@@ -32,7 +21,7 @@ const Cart = () => {
 				quantity: item.quantity,
 			});
 		});
-       
+
 		stripeCheckout({ lineItems });
 	};
 

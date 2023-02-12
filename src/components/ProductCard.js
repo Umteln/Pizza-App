@@ -1,4 +1,3 @@
-// import { CartContext } from '../CartContext';
 import { useContext } from 'react';
 import '../styles/Product.css';
 import { ShoppingCartContext } from '../utils/shoppingCartContext';
@@ -60,21 +59,22 @@ function ProductCard({ product }) {
 					{productQuantity > 0 ? (
 						<>
 							<form>
-								
 								<Box
 									sx={{
 										display: 'flex',
 										justifyContent: 'space-between',
 										alignItems: 'center',
 										fontWeight: 700,
-
 									}}
 								>
-									<AddIcon onClick={() => cart.addOneToCart(product.id)} />
-
-									<RemoveIcon
-										onClick={() => cart.removeOneFromCart(product.id)}
-									/>
+									<div>
+										<AddIcon onClick={() => cart.addOneToCart(product.id)} />
+									</div>
+									<div>
+										<RemoveIcon
+											onClick={() => cart.removeOneFromCart(product.id)}
+										/>
+									</div>
 								</Box>
 								<label>In Cart: {productQuantity} </label>
 							</form>
