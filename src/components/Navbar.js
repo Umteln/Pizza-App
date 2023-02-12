@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import '../styles/Navbar.css';
-import { CartContext } from '../utils/cartContext';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.png';
 import ReorderIcon from '@mui/icons-material/Reorder';
+import { ShoppingCartContext } from '../utils/shoppingCartContext';
 
 const Navbar = () => {
-	const { openLinks, setOpenLinks } = useContext(CartContext);
-	const cart = useContext(CartContext);
+	const { openLinks, setOpenLinks } = useContext(ShoppingCartContext);
+	const cart = useContext(ShoppingCartContext);
 
 	const productsCount = cart.items.reduce(
 		(sum, product) => sum + product.quantity,

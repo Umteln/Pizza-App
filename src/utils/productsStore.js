@@ -7,7 +7,8 @@ import Expensive from '../images/expensive.jpg';
 import housewings from '../images/housewings.jpg';
 import burger from '../images/burger.jpg';
 
-const productsArray = [
+
+export const productsArray = [
 	{
 		id: process.env.REACT_APP_FIREBASE_Cheese,
 		image: Cheese,
@@ -82,17 +83,13 @@ const productsArray = [
 	},
 ];
 
-//function to help get the data of a product using only the id
+export function getProductData(id) {
+    let productData = productsArray.find(product => product.id === id);
 
-function getProductData(id) {
-	let productData = productsArray.find((product) => product.id === id);
+    if (productData === undefined) {
+        console.log("Product data does not exist for ID: " + id);
+        return undefined;
+    }
 
-	if (productData === undefined) {
-		console.log('Product data does not exist for ID: ' + id);
-		return undefined;
-	}
-
-	return productData;
+    return productData;
 }
-
-export { productsArray, getProductData };

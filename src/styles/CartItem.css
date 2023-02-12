@@ -21,7 +21,7 @@
 /* Cart Item */
 
 .cartItem {
-	width: 700px;
+	width: 500px;
 	height: 200px;
 	display: flex;
 	justify-content: center;
@@ -41,10 +41,10 @@
 	margin-left: 30px;
 }
 
-.cartItem img {
-	margin: 0 20px;
-	width: 200px;
-	height: 200px;
+.product-img {
+	margin-top: 10px;
+	width: 150px;
+	height: 150px;
 	border-radius: 5%;
 }
 
@@ -66,7 +66,7 @@
 .cartItem button {
 	background-color: #121619;
 	color: whitesmoke;
-	font-size: 2.5px;
+	font-size: 15px;
 	cursor: pointer;
 	margin-bottom: 30px;
 	margin-left: 30px;
