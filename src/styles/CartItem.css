@@ -1,0 +1,132 @@
+.cart {
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.cart .cartTitle {
+	font-family: cursive;
+	font-size: 60px;
+}
+
+.cartList {
+	width: 70vw;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+}
+/* Cart Item */
+
+.cartItem {
+	width: 700px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+	border-radius: 25px;
+	margin: 30px;
+}
+.cartItem h1 {
+	font-weight: 10;
+	font-size: 25px;
+	margin-left: 30px;
+}
+.cartItem p {
+	font-weight: 10;
+	font-size: 15px;
+	margin-left: 30px;
+}
+
+.cartItem img {
+	margin: 0 20px;
+	width: 200px;
+	height: 200px;
+	border-radius: 5%;
+}
+
+.cartItem .description {
+	width: 50%;
+	font-size: 30px;
+}
+
+.cartItem .quantity {
+	display: flex;
+	font-size: 10px;
+}
+
+.checkout {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cartItem button {
+	background-color: #121619;
+	color: whitesmoke;
+	font-size: 2.5px;
+	cursor: pointer;
+	margin-bottom: 30px;
+	margin-left: 30px;
+}
+
+.cartItem button:hover {
+	background-color: rgb(225, 225, 225);
+	color: #121619;
+}
+
+.checkout button {
+	margin: 40px 30px;
+	width: 140px;
+	height: 40px;
+	border: none;
+	background-color: #121619;
+	color: whitesmoke;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.checkout button:hover {
+	background-color: rgb(225, 225, 225);
+	color: #121619;
+}
+
+@media only screen and (max-width: 1300px) {
+	.cartList {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.cartList {
+		grid-template-columns: 1fr;
+	}
+	.cartItem {
+		width: 400px;
+		height: 200px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+		border-radius: 25px;
+		margin: 30px;
+	}
+	.cartItem h1 {
+		font-weight: 10;
+		font-size: 20px;
+		margin-left: 15px;
+	}
+	.cartItem p {
+		font-weight: 10;
+		font-size: 15px;
+		margin-left: 15px;
+	}
+
+	.cartItem img {
+		margin: 0 20px;
+		width: 150px;
+		border-radius: 5%;
+	}
+}
