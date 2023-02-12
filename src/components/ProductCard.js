@@ -6,13 +6,11 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import {
 	Box,
-	Button,
 	Card,
 	CardActions,
 	CardContent,
 	CardHeader,
 	CardMedia,
-	IconButton,
 	Typography,
 } from '@mui/material';
 
@@ -62,22 +60,23 @@ function ProductCard({ product }) {
 					{productQuantity > 0 ? (
 						<>
 							<form>
-								<label>In Cart: </label>
+								
 								<Box
 									sx={{
 										display: 'flex',
+										justifyContent: 'space-between',
 										alignItems: 'center',
 										fontWeight: 700,
+
 									}}
 								>
 									<AddIcon onClick={() => cart.addOneToCart(product.id)} />
-
-									<span className='amount'> {productQuantity}</span>
 
 									<RemoveIcon
 										onClick={() => cart.removeOneFromCart(product.id)}
 									/>
 								</Box>
+								<label>In Cart: {productQuantity} </label>
 							</form>
 						</>
 					) : (

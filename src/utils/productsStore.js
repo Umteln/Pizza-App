@@ -7,7 +7,6 @@ import Expensive from '../images/expensive.jpg';
 import housewings from '../images/housewings.jpg';
 import burger from '../images/burger.jpg';
 
-
 export const productsArray = [
 	{
 		id: process.env.REACT_APP_FIREBASE_Cheese,
@@ -15,7 +14,6 @@ export const productsArray = [
 		title: 'Cheese Pizza',
 		description: 'Marinara sauce, basil, and mozzarella cheese',
 		price: 19.99,
-		quantity: 0,
 	},
 
 	{
@@ -25,7 +23,6 @@ export const productsArray = [
 		price: 17.99,
 		description:
 			'Marinara sauce, basil, roma tomatoes, red onions, olives, and mozzarella cheese',
-		quantity: 0,
 	},
 	{
 		id: process.env.REACT_APP_FIREBASE_Special,
@@ -34,7 +31,6 @@ export const productsArray = [
 		price: 25.99,
 		description:
 			'Marinara sauce, basil, roma tomatoes, red onions, olives, and mozzarella cheese',
-		quantity: 0,
 	},
 	{
 		id: process.env.REACT_APP_FIREBASE_Vegan,
@@ -43,7 +39,6 @@ export const productsArray = [
 		price: 17.99,
 		description:
 			'Marinara sauce, green peppers, roma tomatoes, red onions, olives, and vegan cheese',
-		quantity: 0,
 	},
 	{
 		id: process.env.REACT_APP_FIREBASE_Pineapple,
@@ -52,7 +47,6 @@ export const productsArray = [
 		price: 14.99,
 		description:
 			'Marinara sauce, pineapple slices, turkey ham, red onions, and mozzarella cheese',
-		quantity: 0,
 	},
 	{
 		id: process.env.REACT_APP_FIREBASE_Bougie,
@@ -61,7 +55,6 @@ export const productsArray = [
 		price: 1299.99,
 		description:
 			'Marinara sauce, edible gold flakes, shredded brisket, roma tomatoes, red onions, olives, and mozzarella cheese',
-		quantity: 0,
 	},
 	{
 		id: process.env.REACT_APP_FIREBASE_Wings,
@@ -69,7 +62,6 @@ export const productsArray = [
 		title: 'Buffalo Wings',
 		description: '6pc Breaded wings w/ house made buffalo sauce',
 		price: 11.99,
-		quantity: 0,
 	},
 
 	{
@@ -79,17 +71,16 @@ export const productsArray = [
 		description:
 			'Seasoned burger w/ tomatoes, onion, pickles, and mayo served on an onion bun',
 		price: 13.99,
-		quantity: 0,
 	},
 ];
 
 export function getProductData(id) {
-    let productData = productsArray.find(product => product.id === id);
+	let productData = productsArray.find((product) => product.id === id);
 
-    if (productData === undefined) {
-        console.log("Product data does not exist for ID: " + id);
-        return undefined;
-    }
+	if (productData === undefined) {
+		console.log('Product data does not exist for ID: ' + id);
+		return undefined;
+	}
 
-    return productData;
+	return productData;
 }
