@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import { productsArray, getProductData } from './productsStore';
+import { getProductData } from './productsStore';
 
 export const ShoppingCartContext = createContext({
 	items: [],
@@ -12,8 +12,7 @@ export const ShoppingCartContext = createContext({
 
 export function ShoppingCartProvider({ children }) {
 	const [cartProducts, setCartProducts] = useState([]);
-    const [openLinks, setOpenLinks] = useState(false);
-	// [ { id: 1 , quantity: 3 }, { id: 2, quantity: 1 } ]
+	const [openLinks, setOpenLinks] = useState(false);
 
 	function getProductQuantity(id) {
 		const quantity = cartProducts.find(
@@ -31,7 +30,6 @@ export function ShoppingCartProvider({ children }) {
 		const quantity = getProductQuantity(id);
 
 		if (quantity === 0) {
-			// product is not in cart
 			setCartProducts([
 				...cartProducts,
 				{
@@ -40,14 +38,11 @@ export function ShoppingCartProvider({ children }) {
 				},
 			]);
 		} else {
-			// product is in cart
-			// [ { id: 1 , quantity: 3 }, { id: 2, quantity: 1 } ]    add to product id of 2
 			setCartProducts(
-				cartProducts.map(
-					(product) =>
-						product.id === id // if condition
-							? { ...product, quantity: product.quantity + 1 } // if statement is true
-							: product // if statement is false
+				cartProducts.map((product) =>
+					product.id === id
+						? { ...product, quantity: product.quantity + 1 } // if statement is true
+						: product
 				)
 			);
 		}
@@ -61,11 +56,10 @@ export function ShoppingCartProvider({ children }) {
 			deleteFromCart(id);
 		} else {
 			setCartProducts(
-				cartProducts.map(
-					(product) =>
-						product.id === id // if condition
-							? { ...product, quantity: product.quantity - 1 } // if statement is true
-							: product // if statement is false
+				cartProducts.map((product) =>
+					product.id === id
+						? { ...product, quantity: product.quantity - 1 }
+						: product
 				)
 			);
 		}
@@ -73,9 +67,6 @@ export function ShoppingCartProvider({ children }) {
 	}
 
 	function deleteFromCart(id) {
-		// [] if an object meets a condition, add the object to array
-		// [product1, product2, product3]
-		// [product1, product3]
 		setCartProducts((cartProducts) =>
 			cartProducts.filter((currentProduct) => {
 				return currentProduct.id !== id;
@@ -96,7 +87,7 @@ export function ShoppingCartProvider({ children }) {
 	const contextValue = {
 		items: cartProducts,
 		cartProducts,
-		openLinks, 
+		openLinks,
 		setOpenLinks,
 		setCartProducts,
 		getProductQuantity,
@@ -114,7 +105,3 @@ export function ShoppingCartProvider({ children }) {
 }
 
 export default ShoppingCartProvider;
-
-// CODE DOWN HERE
-
-// Context (cart, addToCart, removeCart)

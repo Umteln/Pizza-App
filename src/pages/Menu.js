@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Menu.css';
-import { productsArray } from '../utils/productsStore';
 import ProductCard from '../components/ProductCard';
+import { productsArray } from '../utils/productsStore';
 
 const Menu = () => {
 	return (
