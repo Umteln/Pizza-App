@@ -7,7 +7,7 @@ import Expensive from '../images/expensive.jpg';
 
 export const productsArray = [
 	{
-		id: process.env.REACT_APP_FIREBASE_Cheese,
+		id: 'price_1MT2y9CY6RECS3apMYpbIpAe',
 		image: Cheese,
 		title: 'Cheese Pizza',
 		description: 'Marinara sauce, basil, and mozzarella cheese',
@@ -15,7 +15,7 @@ export const productsArray = [
 	},
 
 	{
-		id: process.env.REACT_APP_FIREBASE_Margherita,
+		id: 'price_1MXNOBCY6RECS3apNFifuqM4',
 		title: 'Margherita Pizza',
 		image: Margherita,
 		price: 17.99,
@@ -23,7 +23,7 @@ export const productsArray = [
 			'Marinara sauce, basil, roma tomatoes, red onions, olives, and mozzarella cheese',
 	},
 	{
-		id: process.env.REACT_APP_FIREBASE_Special,
+		id: 'price_1MXNSECY6RECS3apooTb43a9',
 		title: 'Special Pizza',
 		image: Special,
 		price: 25.99,
@@ -31,7 +31,7 @@ export const productsArray = [
 			'Marinara sauce, basil, roma tomatoes, red onions, olives, and mozzarella cheese',
 	},
 	{
-		id: process.env.REACT_APP_FIREBASE_Vegan,
+		id: 'price_1MXNTlCY6RECS3apZUQrYbWG',
 		title: 'Vegan Pizza',
 		image: Vegan,
 		price: 17.99,
@@ -39,7 +39,7 @@ export const productsArray = [
 			'Marinara sauce, green peppers, roma tomatoes, red onions, olives, and vegan cheese',
 	},
 	{
-		id: process.env.REACT_APP_FIREBASE_Pineapple,
+		id: 'price_1MXpFPCY6RECS3apHuDMegGO',
 		title: 'Pineapple Pizza',
 		image: Pineapple,
 		price: 14.99,
@@ -48,7 +48,7 @@ export const productsArray = [
 		quantity: 0,
 	},
 	{
-		id: process.env.REACT_APP_FIREBASE_Bougie,
+		id: 'price_1MXpHdCY6RECS3apLlz91nCr',
 		title: 'Bougie Pizza',
 		image: Expensive,
 		price: 1299.99,
