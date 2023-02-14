@@ -17,7 +17,7 @@ export async function stripeCheckout({ lineItems }) {
 	await stripe.redirectToCheckout({
 		mode: 'payment',
 		lineItems,
-		successUrl: `http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}`,
-		cancelUrl: 'http://localhost:3000/cancel',
+		successUrl: `${window.location.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+		cancelUrl: `${window.location.origin}/cancel`,
 	});
 }
